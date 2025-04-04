@@ -1,4 +1,6 @@
 console.log('Start JS...')
+// Imported resources
+import { quoteGenerator } from "./functions.js"
 // Global Variables
 let btnStartQuote = document.getElementById('start-quote')
 const quotesList = ["Controlla se il tuo pane a casa \u00E8 stato chiuso bene.", 
@@ -9,12 +11,6 @@ const quotesList = ["Controlla se il tuo pane a casa \u00E8 stato chiuso bene.",
     "Le persone vanno e vengono, ma JS \u00E8 per sempre, purtroppo."]
 
 // Links to HTML
-btnStartQuote.addEventListener('click',quoteGenerator)
+btnStartQuote.addEventListener('click',() => quoteGenerator(quotesList))
 
-// Functions
-function quoteGenerator(){
-    const randomNumber = Math.floor(Math.random()* quotesList.length);
-    const quoteText = document.getElementById('quote-text').innerText = quotesList[randomNumber];
-    document.getElementById('quote-text').style.backgroundColor = "antiquewhite"
-}
 console.log('Loading: Done')
